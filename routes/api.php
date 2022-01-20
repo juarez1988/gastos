@@ -67,3 +67,4 @@ Route::put('/admin/deactivate-category/{categoryId}', 'Api\CategoryController@de
 Route::post('/admin/create-category', 'Api\CategoryController@createdCategory')->middleware('apicheckadmin');
 Route::delete('/admin/delete-category/{categoryId}', 'Api\CategoryController@deleteCategory')->middleware('apicheckadmin');
 Route::post('/admin/edit-category', 'Api\CategoryController@editedCategory')->middleware('apicheckadmin');
+
