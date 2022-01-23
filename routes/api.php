@@ -46,11 +46,13 @@ Route::post('/search-movements', 'Api\MovementController@searchMovements')->midd
 
 
 //RUTAS ADMIN
+
 //users
 Route::get('/admin/all-users', 'Api\UserController@activateUsers')->middleware('apicheckadmin');
 Route::put('/admin/activate-user/{userId}', 'Api\UserController@activeUser')->middleware('apicheckadmin');
 Route::put('/admin/deactivate-user/{userId}', 'Api\UserController@desactiveUser')->middleware('apicheckadmin');
 Route::get('/admin/active-users', 'Api\UserController@listActiveUsers')->middleware('apicheckadmin');
+
 //accounts
 Route::get('/admin/all-accounts', 'Api\AccountController@getAllAccounts')->middleware('apicheckadmin');
 Route::get('/admin/account/{accountId}', 'Api\AccountController@getAccount')->middleware('apicheckadmin');
@@ -59,6 +61,7 @@ Route::put('/admin/deactivate-account/{accountId}', 'Api\AccountController@desac
 Route::post('/admin/create-account', 'Api\AccountController@createdAccount')->middleware('apicheckadmin');
 Route::post('/admin/edit-account', 'Api\AccountController@editedAccount')->middleware('apicheckadmin');
 Route::delete('/admin/delete-account/{accountId}', 'Api\AccountController@deleteAccount')->middleware('apicheckadmin');
+
 //Categories
 Route::get('/admin/all-categories', 'Api\CategoryController@getAllCategories')->middleware('apicheckadmin');
 Route::get('/admin/category/{categoryId}', 'Api\CategoryController@getCategory')->middleware('apicheckadmin');
@@ -67,4 +70,3 @@ Route::put('/admin/deactivate-category/{categoryId}', 'Api\CategoryController@de
 Route::post('/admin/create-category', 'Api\CategoryController@createdCategory')->middleware('apicheckadmin');
 Route::delete('/admin/delete-category/{categoryId}', 'Api\CategoryController@deleteCategory')->middleware('apicheckadmin');
 Route::post('/admin/edit-category', 'Api\CategoryController@editedCategory')->middleware('apicheckadmin');
-
