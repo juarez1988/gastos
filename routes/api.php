@@ -24,6 +24,7 @@ Route::get('/prueba', function () {
 });
 
 //RUTAS USER
+
 //users
 Route::post('/login', 'Api\UserController@login');
 Route::post('/register', 'Api\UserController@register');
@@ -32,10 +33,13 @@ Route::get('/user/avatar/{filename}', 'Api\UserController@getImage')->middleware
 Route::post('/profile-update', 'Api\UserController@update')->middleware('apichecktoken');
 Route::post('/profile-password-update', 'Api\UserController@updatepassword')->middleware('apichecktoken');
 Route::get('/getDecodeToken', 'Api\UserController@getDecodeToken')->middleware('apichecktoken');
+
 //accounts
 Route::get('/accounts', 'Api\AccountController@index')->middleware('apichecktoken');
+
 //categories
 Route::get('/categories', 'Api\CategoryController@index')->middleware('apichecktoken');
+
 //movements
 Route::get('/movements', 'Api\MovementController@index')->middleware('apichecktoken');
 Route::get('/movement/{movementId}', 'Api\MovementController@getMovement')->middleware('apichecktoken');
